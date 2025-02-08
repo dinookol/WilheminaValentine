@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff4d4d;
+            font-size: 28px;
+        }
+        .heart {
+            color: #ff4d4d;
+            font-size: 50px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: #cccccc;
+            color: black;
+            position: absolute;
+        }
+        .yes:hover {
+            background-color: #ff3333;
+        }
+    </style>
+    <script>
+        function showLove() {
+            document.querySelector(".container").innerHTML = "<h1>Yay! ❤️ Can't wait for our date! 😍</h1>";
+        }
+
+        function moveNoButton() {
+            let button = document.querySelector(".no");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine on February 14? <span class="heart">❤️</span></h1>
+        <div class="buttons">
+            <button class="yes" onclick="showLove()">Yes</button>
+            <button class="no" onmouseover="moveNoButton()">No</button>
+        </div>
+    </div>
+</body>
+</html>
